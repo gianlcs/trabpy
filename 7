@@ -1,0 +1,14 @@
+idade = int(input("Digite sua idade: "))
+renda = float(input("Digite sua renda mensal: R$ "))
+dividas = float(input("Digite suas dívidas: R$ "))
+
+percentual_dividas = (dividas / renda) * 100
+
+if renda < 2000 and percentual_dividas > 50:
+    print("Risco Alto")
+elif (renda >= 2000 and renda <= 5000) or (percentual_dividas >= 30 and percentual_dividas <= 50):
+    print("Risco Médio")
+elif renda > 5000 and percentual_dividas < 30:
+    print("Risco Baixo")
+else:
+    print("Risco Médio-Baixo")
