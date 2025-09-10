@@ -1,0 +1,17 @@
+nota1 = float(input("Digite a primeira nota (0-10): "))
+nota2 = float(input("Digite a segunda nota (0-10): "))
+nota3 = float(input("Digite a terceira nota (0-10): "))
+
+# Verifica se alguma nota é 0
+if nota1 == 0 or nota2 == 0 or nota3 == 0:
+    print("Reprovado automático (nota 0)")
+else:
+    media = (nota1 + nota2 + nota3) / 3
+    print(f"Média: {media:.2f}")
+    
+    if media >= 7:
+        print("Aprovado")
+    elif media >= 5:
+        print("Recuperação")
+    else:
+        print("Reprovado")
