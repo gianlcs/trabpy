@@ -1,0 +1,18 @@
+preco = float(input("Digite o preço do produto: R$ "))
+vip = input("É cliente VIP? (sim/não): ").lower()
+
+desconto = 0
+
+if preco >= 100:
+    desconto = 20
+elif preco >= 50:
+    desconto = 10
+
+if vip == "sim":
+    desconto += 5
+
+preco_final = preco * (1 - desconto/100)
+
+print(f"Preço original: R$ {preco:.2f}")
+print(f"Desconto: {desconto}%")
+print(f"Preço final: R$ {preco_final:.2f}")
