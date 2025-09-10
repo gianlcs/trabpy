@@ -1,0 +1,27 @@
+sequencia_correta = ['B', 'C', 'D', 'A']
+pontuacao = 0
+
+print("Digite a sequência de 4 cartas (A, B, C, D):")
+carta1 = input("Primeira carta: ").upper()
+carta2 = input("Segunda carta: ").upper()
+carta3 = input("Terceira carta: ").upper()
+carta4 = input("Quarta carta: ").upper()
+
+usuario_sequencia = [carta1, carta2, carta3, carta4]
+
+# Pontos por acertos
+for i in range(4):
+    if usuario_sequencia[i] == sequencia_correta[i]:
+        pontuacao += 10
+
+# Bônus por carta A
+if 'A' in usuario_sequencia:
+    pontuacao += 5
+
+# Bônus C seguido de D
+for i in range(3):
+    if usuario_sequencia[i] == 'C' and usuario_sequencia[i+1] == 'D':
+        pontuacao += 5
+        break
+
+print(f"Sua pontuação: {pontuacao} pontos")
