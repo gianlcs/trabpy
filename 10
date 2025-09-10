@@ -1,0 +1,22 @@
+senha = input("Digite uma senha: ")
+
+tem_maiuscula = any(c.isupper() for c in senha)
+tem_minuscula = any(c.islower() for c in senha)
+tem_numero = any(c.isdigit() for c in senha)
+tem_simbolo = any(c in "!@#$%" for c in senha)
+tem_8_chars = len(senha) >= 8
+
+if tem_maiuscula and tem_minuscula and tem_numero and tem_simbolo and tem_8_chars:
+    print("Senha válida!")
+else:
+    print("Senha inválida. Precisa ter:")
+    if not tem_8_chars:
+        print("- Mínimo 8 caracteres")
+    if not tem_maiuscula:
+        print("- Pelo menos 1 maiúscula")
+    if not tem_minuscula:
+        print("- Pelo menos 1 minúscula")
+    if not tem_numero:
+        print("- Pelo menos 1 número")
+    if not tem_simbolo:
+        print("- Pelo menos 1 símbolo (!@#$%)")
