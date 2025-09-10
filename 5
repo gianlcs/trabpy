@@ -1,0 +1,19 @@
+dia = int(input("Digite o dia: "))
+mes = int(input("Digite o mês: "))
+ano = int(input("Digite o ano: "))
+
+# Dias por mês
+dias_mes = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+
+# Verifica ano bissexto
+if (ano % 4 == 0 and ano % 100 != 0) or (ano % 400 == 0):
+    dias_mes[1] = 29
+
+# Validação
+if mes >= 1 and mes <= 12:
+    if dia >= 1 and dia <= dias_mes[mes - 1]:
+        print("Data válida!")
+    else:
+        print("Dia inválido")
+else:
+    print("Mês inválido")
